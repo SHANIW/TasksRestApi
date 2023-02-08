@@ -1,4 +1,5 @@
-using TasksRestApi.Models;
+
+using TasksRestApi.Repositories;
 
 namespace TasksRestApi
 {
@@ -15,9 +16,9 @@ namespace TasksRestApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            
-            builder.Services.AddScoped<ITasksRepository, TasksRepository>();
-            
+
+            //builder.Services.AddScoped<ITasksRepository, TasksRepository>();
+            builder.Services.AddScoped<ITasksDBRepository, TasksDBRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

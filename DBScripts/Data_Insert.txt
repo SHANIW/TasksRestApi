@@ -1,0 +1,5 @@
+insert into [dbo].[Task] ([Title],[Description],[StartDate],[EndDate],[Priority],[Category],[Status])
+values('Task1','Description Task1','2023-01-15', '2023-01-18',1,'IT','Pending')
+
+insert into [dbo].[Task] ([Title],[Description],[StartDate],[EndDate],[Priority],[Category],[Status])
+values('Task2','Description Task2','2023-01-20', '2023-01-30',1,'HR','Completed')
