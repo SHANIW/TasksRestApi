@@ -220,7 +220,7 @@ namespace TasksRestApi.Repositories
         
         private static SqlConnection getConnection()
         {            
-            string TasksDBConnectionString = _configuration.GetConnectionString("TasksDBConnection"); // read logDb connection string example
+            string TasksDBConnectionString = _configuration.GetConnectionString("TasksDBConnection"); //read value from appsettings.json
             SqlConnection conn = new SqlConnection(TasksDBConnectionString);
 
             return conn;
