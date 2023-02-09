@@ -31,8 +31,7 @@ namespace TasksRestApi.Repositories
                             if (reader != null)
                             {
                                 while (reader.Read())
-                                {
-                                    //TODO null handle
+                                {                                    
                                     TasksRestApi.Models.Task task = new TasksRestApi.Models.Task();
                                     task.Id = Convert.ToInt32(reader["id"]);
                                     task.Title = reader["Title"].ToString();
@@ -77,8 +76,7 @@ namespace TasksRestApi.Repositories
                         if (reader != null)
                         {
                             while (reader.Read())
-                            {
-                                //TODO null handle
+                            {                                
                                 TasksRestApi.Models.Task task = new TasksRestApi.Models.Task();
                                 task.Id = Convert.ToInt32(reader["id"]);
                                 task.Title = reader["Title"].ToString();
@@ -170,7 +168,7 @@ namespace TasksRestApi.Repositories
                     cmd.Parameters.AddWithValue("@Status", task.Status);
                     var val = cmd.ExecuteScalar();
                     task.Id = Convert.ToInt32(val);
-                    return task;  //TODO return the saved object
+                    return task;  
                 }
                 catch (Exception ex)
                 {
@@ -223,9 +221,7 @@ namespace TasksRestApi.Repositories
             string TasksDBConnectionString = _configuration.GetConnectionString("TasksDBConnection"); //read value from appsettings.json
             SqlConnection conn = new SqlConnection(TasksDBConnectionString);
 
-            return conn;
-
-            
+            return conn;          
 
         }
     }
